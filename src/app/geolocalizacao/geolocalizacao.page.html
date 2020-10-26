@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo">Localização</ion-title>
+    <!-- <ion-button (click)="getLocalization()" slot="end">
+      <ion-icon name="paper-plane"></ion-icon>
+      <p>Get</p>
+    </ion-button> -->
+    <ion-img slot="start" (click)="fecharPage()" style="height: 22px; width: 35px; margin-left: 10px;" src="assets/iconMenu.png"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="!latitude"  style="margin-top: 40px;">
+    <ion-card-header>
+      <ion-card-title>Aguarde a chamada ...</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card *ngIf="latitude" style="margin-top: 40px;">
+    <ion-card-header>
+      <ion-card-subtitle>Geolocalização</ion-card-subtitle>
+      <ion-card-title>Sua localização</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>Latitude: {{latitude}}</p>
+      <p>Longitude: {{longitude}}</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

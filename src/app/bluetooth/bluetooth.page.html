@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo">Bluetooth</ion-title>
+    <!-- <ion-button (click)="Scan()" slot="end">
+      <ion-icon name="Bluetooth"></ion-icon>
+      <p>Scan</p>
+    </ion-button> -->
+    <ion-img slot="start" (click)="fecharPage()" style="height: 22px; width: 35px; margin-left: 10px;" src="assets/iconMenu.png"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngFor= "let device of devices">
+    <ion-list (click)="connectBle(device)">
+      <ion-item >
+        <p>{{device.name || 'Unnamed'}}</p><br>
+        <!-- <p>{{device.id}}</p><br>
+        <p>RSSI: {{device.rssi}}</p><br> -->
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="secondary" (click)="Scan()" >  <ion-icon name="Bluetooth"></ion-icon></ion-fab-button>
+  </ion-fab>
+
+<!-- 
+ <div *ngFor= "let device of devices">
+  <ion-card (click)="connectBle(device)">
+    <ion-card-content >
+      <p>{{device.name || 'Unnamed'}}</p>
+      <p>{{device.id}}</p>
+      <p>RSSI: {{device.rssi}}</p>
+    </ion-card-content>
+  </ion-card>
+  </div> -->
+</ion-content>
